@@ -1,0 +1,19 @@
+class Solution {
+    public double myPow(double x, int n) {
+        long binary = n;
+        if(binary < 0){
+            x = 1/x;
+            binary = -binary;
+        }
+        double ans=1;
+        while(binary>0){
+            long digit = binary % 2;
+            if(digit == 1){
+                ans *= x;
+            }
+            x *= x;
+            binary /= 2;
+        }
+        return ans;
+    }
+}
